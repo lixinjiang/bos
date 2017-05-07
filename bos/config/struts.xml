@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 配置公共的struts，struts要求根配置写在src底下 -->
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.objectFactory" value="spring"/>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<!-- 配置公共的struts -->
+	<package name="basicstruts2" extends="struts-default">
+		<!-- 需要进行权限控制的页面访问 -->
+		<action name="page_*_*">
+			<result name="success" type="dispatcher">/WEB-INF/pages/{1}/{2}.jsp</result>
+		</action>
+	</package>
+</struts>
