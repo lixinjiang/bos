@@ -43,6 +43,9 @@
   <filter-mapping>
   	<filter-name>struts2</filter-name>
   	<url-pattern>/*</url-pattern>
+  	<!-- 意思是在服务端请求转发的时候也要经过struts过滤器 -->
+  	<dispatcher>REQUEST</dispatcher>
+  	<dispatcher>FORWARD</dispatcher>
   </filter-mapping>
   
   <welcome-file-list>
